@@ -1,13 +1,16 @@
+body {
+  background-color: #000000;
+}
+
 .cavas-board {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: #000000;
+  background-color: transparent;
   z-index: -1;
 }
-
 
 .erc-card {
   background-color: #191919;
@@ -145,7 +148,6 @@
   padding: 2rem 0 1rem 0;
 }
 
-
 .block-btn {
   background-color: #FFFFFF;
   color: #000000;
@@ -169,7 +171,6 @@
   font-weight: 700;
 }
 
-
 .card-btn:focus {
   outline: none;
 }
@@ -183,11 +184,4 @@
   max-height: 10px;
   position: fixed;
   z-index: 100;
-}
-
-
-.block-line {
-  border-top: 3px solid #fe9833 !important;
-  position: fixed !important;
-  z-index: 0;
 }

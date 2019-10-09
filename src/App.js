@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
-import { Line } from 'react-lineto';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -236,6 +235,25 @@ class App extends Component {
 
   }
 
+
+  handleDValue = (line) => {
+    const { blocks } = this.state;
+    const start = {
+      x: blocks[line.start].deltaPosition.x + 60,
+      y: blocks[line.start].deltaPosition.y + 30,
+    };
+    const end = {
+      x: blocks[line.end].deltaPosition.x + 60,
+      y: blocks[line.end].deltaPosition.y + 30,
+    };
+    const des = Math.pow(Math.pow(start.x - end.x, 2) + Math.pow(start.y - end.y, 2), 0.5);
+    const startCx = start.x < end.x ? start.x + 60 : start.x - 60;
+    const startCy = start.y < end.y ? start.y + des/2 : start.y - des/2;
+    const endCx = start.x < end.x ? end.x - 60 : end.x + 60;
+    const endCy = start.y < end.y ? end.y - des/2 : end.y + des/2;
+    return `M${start.x},${start.y} C${startCx},${startCy} ${endCx},${endCy} ${end.x},${end.y}`;
+  }
+
   
   render() {
 
@@ -274,15 +292,15 @@ class App extends Component {
           </Draggable>
         )}
 
-
         {!isForm && lines.map((line, index) => 
-          <Line
-            key={`line-${index}`}
-            className="block-line"
-            x0={blocks[line.start].deltaPosition.x + 60}
-            y0={blocks[line.start].deltaPosition.y + 30}
-            x1={blocks[line.end].deltaPosition.x + 60}
-            y1={blocks[line.end].deltaPosition.y + 30} />
+            <svg key={`path-${index}`} style={{ position: 'fixed', width: '100%', height: '100%', zIndex: -3 }}>
+              <path
+                d={this.handleDValue(line)}
+                fill="none"
+                stroke="#fe9833"
+                strokeWidth={3}
+              />
+            </svg>
         )}
 
         {isForm && (
