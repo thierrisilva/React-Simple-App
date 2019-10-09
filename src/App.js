@@ -358,7 +358,7 @@ class App extends Component {
             <div className="card-foot">
               <div className="row justify-content-center">
                 <button className="card-btn" onClick={this.handleCacelForm}>Cancel</button>
-                <button className="card-btn" onClick={this.handleDeployForm}>Deploy</button>
+                <button className="card-btn btn-deploy" onClick={this.handleDeployForm}>Deploy</button>
               </div>
             </div>
           </div>

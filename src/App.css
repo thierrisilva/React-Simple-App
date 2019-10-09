@@ -179,9 +179,20 @@ body {
   color: #757575;
 }
 
+.btn-deploy {
+  margin-right: 0;
+}
+
 .react-draggable {
   max-width: 50px;
   max-height: 10px;
   position: fixed;
   z-index: 100;
+}
+
+
+@media screen and (max-width: 550px) {
+  .card-btn {
+    margin: 0 0 1rem 0;
+  }
 }
