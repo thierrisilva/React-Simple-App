@@ -152,9 +152,12 @@ body {
   background-color: #FFFFFF;
   color: #000000;
   border-radius: 5px;
-  padding: 1rem 0;
+  padding: 1rem .5rem;
   width: 120px;
   height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .block-btn:focus {
