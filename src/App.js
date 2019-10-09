@@ -307,7 +307,7 @@ class App extends Component {
           <div className="erc-card">
             <div className="card-header">
               <div className="row justify-content-center">
-                <h3 className="card-title">{ercName}</h3>
+                <h3 className="card-title">ERC-20</h3>
               </div>
             </div>
             <div className="card-body">
